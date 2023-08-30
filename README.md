@@ -150,3 +150,6 @@ $ cd terraform-eks-setup-deployment/kubenetes/
 $ sh deployment.sh
 ```
 
+Note: I have tested one application at a time as host based routing with ALB controller is not working.
+
+So need to use nginx/istio/haproxy ingress to run all the apps at the same time.
