@@ -16,3 +16,4 @@ sudo ./aws/install
 
 aws eks update-kubeconfig --region ap-south-1 --name kotak-assignment
 
+apt-get install docker.io

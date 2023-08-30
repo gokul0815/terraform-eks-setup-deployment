@@ -1,0 +1,16 @@
+Express API
+
+047641257708.dkr.ecr.ap-south-1.amazonaws.com/express-api:1693403025
+
+Rails API
+
+047641257708.dkr.ecr.ap-south-1.amazonaws.com/
+
+
+
+
+
+
+
+
+

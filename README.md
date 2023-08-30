@@ -41,25 +41,91 @@ The init argument will initialize the environment.
 ```bash
 $ terraform init
 ```
-​
+
 The plan argument will syntax check the files and prepare the deployment.
 ```bash
-$ terraform plan -out assignment.plan
+$ terraform plan 
 ```
-​
-Deploy the VPC:
-​
+
+Deploy the Resources:
+
 ```bash
-$ terraform apply assignment.plan
+$ terraform apply 
 ```
-​
-This will deploy the terraform in AWS:
-​
-```bash
-$ terraform show
-```
-​
+
 To destroy the setup done using terraform execute:
 ```bash
 $ terraform destroy
 ```
+
+## Infra Creation
+
+Note: We have went with folder structure for each component of AWS for easy understading.
+
+### Create backend
+
+
+The backend will be used in further to store the state file in s3 and blocking mutiple people running the tasks at same time using dynamodb
+
+```bash
+$ cd terraform-eks-setup-deployment/terraform/backend
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
+
+### Create VPC
+
+The VPC will be used where services will be deployed.
+
+```bash
+$ cd terraform-eks-setup-deployment/terraform/vpc
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
+
+### Create Bastion Server
+
+The Bastion server has admin access. Which is not suggested so please provide the least access only.
+
+```bash
+$ cd terraform-eks-setup-deployment/terraform/ec2-bastion
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
+
+### Create EKS Cluster
+
+From here please start running the same on bastion server
+
+```bash
+$ cd terraform-eks-setup-deployment/terraform/eks
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
+
+## Dockerization
+
+The code has been copied from https://github.com/ranupratapsingh/benchmarks
+
+Please create ECR repo as required.
+
+### RAILS_API
+
+We have created a Dockerfile and docker-build.sh
+
+docker-build.sh builds the image with a tag and pushed to ECR.
+
+### EXPRESS_API
+
+We have created a Dockerfile and docker-build.sh
+
+docker-build.sh builds the image with a tag and pushed to ECR.
+
+##### Note: For code uniformity Port is changed to 3000
+
+
+
