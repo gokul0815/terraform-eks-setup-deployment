@@ -107,6 +107,15 @@ $ terraform plan
 $ terraform apply
 ```
 
+### EKSCTL setup
+
+Run the below script on bastion server to connect to EKS using kubectl and other dependencies
+
+```bash
+$ sh eksctl-setup.sh
+```
+
+
 ## Dockerization
 
 The code has been copied from https://github.com/ranupratapsingh/benchmarks
@@ -128,4 +137,16 @@ docker-build.sh builds the image with a tag and pushed to ECR.
 ##### Note: For code uniformity Port is changed to 3000
 
 
+## EKS deployment
+
+We are using ingress and will be using rules to keep single LB to handle the traffic with the help of ingress. 
+
+Also metrics-server is used to find for HPA.
+
+### Command
+
+```bash
+$ cd terraform-eks-setup-deployment/kubenetes/ 
+$ sh deployment.sh
+```
 

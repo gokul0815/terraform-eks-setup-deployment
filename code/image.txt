@@ -4,7 +4,7 @@ Express API
 
 Rails API
 
-047641257708.dkr.ecr.ap-south-1.amazonaws.com/
+047641257708.dkr.ecr.ap-south-1.amazonaws.com/rails-api:1693404702
 
 
 
