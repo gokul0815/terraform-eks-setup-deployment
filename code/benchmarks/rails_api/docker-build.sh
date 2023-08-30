@@ -11,11 +11,11 @@ REGISTRY="047641257708.dkr.ecr.ap-south-1.amazonaws.com"
 epoch=$(date +%s)
 tag="${epoch}"
 
-#App specific variables
-#use "crm1-frontend only for ganga-dev1"
 ecr_repo_name="rails-api"
 
-$(aws ecr get-login --no-include-email --region ${AWS_REGION})
+
+aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 047641257708.dkr.ecr.ap-south-1.amazonaws.com
+#$(aws ecr get-login --no-include-email --region ${AWS_REGION})
 
 echo "*** Building Docker image: ${REGISTRY}/${ecr_repo_name}:${tag} ***"
 docker build -t ${REGISTRY}/${ecr_repo_name}:${tag} .
