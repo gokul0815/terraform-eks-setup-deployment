@@ -1,0 +1,20 @@
+- - - - - - - - - - - - - - Assignment Start- - - - - - - - - - - - - - - - - - -
+
+Refer to this repo: https://github.com/ranupratapsingh/benchmarks
+
+This repo contains 4 small backend applications in different languages.
+
+Pick any 2 of them, and create deployment scripts for them in HA setup.
+
+Assume AWS as cloud.
+Number of server instances should be configurable
+Load balancer(e.g. AWS ALB) configuration to be part of assignment
+You Should cover
+Server provisioning
+Config management
+Subsequent deployment
+You can do it without without kuberntes.
+ 
+Try ensuring best practices & quality(ease of understanding and well documented).
+
+- - - - - - - - - - - - - - - Assignment End- - - - - - - - - - - - - - - - - - -
